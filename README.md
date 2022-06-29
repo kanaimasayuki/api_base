@@ -14,7 +14,7 @@ error_codeに応じたメッセージを登録したファイル。ApiException�
 ## デプロイ方法
 ```
 docker build -t api_base:{xxx} .
-docker run -itd -p 8080:8080 -v $PWD/:/data/project api_base:{xxx}
+docker run -itd -u `id -u`:`id -g` -p 8080:8080 -v $PWD/:/data/project api_base:{xxx}
 ```
 {xxx}は適宜変更してください。
 
